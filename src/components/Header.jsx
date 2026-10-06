@@ -21,7 +21,14 @@ export const Header = () => {
   return (
     <header className="h-16 bg-white border-b border-slate-200 sticky top-0 z-30 px-6 flex items-center justify-between shadow-xs">
       <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2 text-cyan-600 font-bold text-lg tracking-wider">
+        <div
+          onClick={() => {
+            if (user?.role === "DOCTOR") window.location.href = "/doctor/dashboard";
+            else if (user?.role === "ADMIN") window.location.href = "/admin/dashboard";
+            else window.location.href = "/patient/dashboard";
+          }}
+          className="flex items-center gap-2 text-cyan-600 font-bold text-lg tracking-wider cursor-pointer hover:opacity-90 transition"
+        >
           <Activity className="w-6 h-6 animate-pulse text-cyan-600" />
           <span>MEDIQ AI</span>
         </div>

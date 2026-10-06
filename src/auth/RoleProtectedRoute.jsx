@@ -7,7 +7,7 @@ export const RoleProtectedRoute = ({ allowedRoles, children }) => {
 
   if (!user || !allowedRoles.includes(user.role)) {
     if (user?.role === "PATIENT") return <Navigate to="/patient/dashboard" replace />;
-    if (user?.role === "DOCTOR") return <Navigate to="/doctor/workspace" replace />;
+    if (user?.role === "DOCTOR") return <Navigate to="/doctor/dashboard" replace />;
     if (user?.role === "ADMIN") return <Navigate to="/admin/dashboard" replace />;
     return <Navigate to="/login" replace />;
   }

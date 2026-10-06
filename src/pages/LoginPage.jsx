@@ -25,7 +25,7 @@ export const LoginPage = () => {
         loggedUser.role === "PATIENT"
           ? "/patient/dashboard"
           : loggedUser.role === "DOCTOR"
-          ? "/doctor/workspace"
+          ? "/doctor/dashboard"
           : "/admin/dashboard";
 
       navigate(redirectPath, { replace: true });
