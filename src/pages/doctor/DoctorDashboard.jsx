@@ -381,6 +381,16 @@ export const DoctorDashboard = () => {
               <span>17:00</span>
             </div>
           </div>
+
+          <div className="pt-2 border-t border-slate-100 flex justify-end">
+            <button
+              onClick={() => navigate("/doctor/schedules")}
+              className="text-xs text-cyan-700 hover:text-cyan-800 font-semibold flex items-center gap-1"
+            >
+              <span>Xem lịch làm việc</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
 
         {/* Quick Actions */}

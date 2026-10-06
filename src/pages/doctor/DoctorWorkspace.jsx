@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import {
   Mic, Bot, Save, UserCheck, Heart, Activity, Thermometer,
-  Wind, Clock, AlertCircle, CheckCircle2, FileText, ArrowRight,
+  Wind, Clock, AlertCircle, CheckCircle2, FileText, ArrowRight, ArrowLeft,
   Sparkles, RefreshCw, Plus, Trash2, ShieldAlert
 } from "lucide-react";
 import { doctorDataService } from "../../services/doctorDataService";
@@ -200,6 +200,12 @@ export const DoctorWorkspace = () => {
         </div>
 
         <div className="flex items-center gap-2">
+          <button
+            onClick={() => navigate("/doctor/dashboard")}
+            className="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl flex items-center gap-1.5 transition"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 text-slate-600" /> Về Dashboard
+          </button>
           <button
             onClick={handleSaveDraft}
             className="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl flex items-center gap-1.5 transition"

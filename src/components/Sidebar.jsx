@@ -37,7 +37,6 @@ export const Sidebar = () => {
             </div>
             <nav className="space-y-1">
               <NavItem to="/doctor/dashboard" icon={LayoutDashboard} label="Tổng Quan Dashboard" />
-              <NavItem to="/doctor/workspace" icon={Stethoscope} label="Phòng Khám Bệnh" badge="Live" />
               <NavItem to="/doctor/schedules" icon={CalendarCheck} label="Lịch Làm Việc" />
               <NavItem to="/doctor/appointments" icon={Calendar} label="Quản Lý Lịch Hẹn" />
               <NavItem to="/doctor/patients" icon={Users} label="Danh Sách Bệnh Nhân" />
