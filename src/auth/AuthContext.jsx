@@ -30,6 +30,16 @@ export const AuthProvider = ({ children }) => {
     setToken(null);
   };
 
+  const updateUser = (updatedFields) => {
+    setUser((prev) => {
+      const nextUser = { ...prev, ...updatedFields };
+      const currentSession = mockAuthService.getCurrentSession() || {};
+      const updatedSession = { ...currentSession, user: nextUser };
+      localStorage.setItem("mediq_user", JSON.stringify(updatedSession));
+      return nextUser;
+    });
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -38,7 +48,8 @@ export const AuthProvider = ({ children }) => {
         isAuthenticated: !!user,
         loading,
         login,
-        logout
+        logout,
+        updateUser
       }}
     >
       {!loading && children}

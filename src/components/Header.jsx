@@ -39,9 +39,22 @@ export const Header = () => {
 
         <div className="h-6 w-[1px] bg-slate-200"></div>
 
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full ring-2 ring-cyan-500/30 bg-cyan-100 border border-cyan-300 flex items-center justify-center text-cyan-700 font-bold text-sm shrink-0">
-            {user?.name ? user.name.charAt(0).toUpperCase() : <User className="w-5 h-5" />}
+        <div
+          onClick={() => {
+            if (user?.role === "DOCTOR") window.location.href = "/doctor/profile";
+            else if (user?.role === "PATIENT") window.location.href = "/patient/profile";
+          }}
+          className="flex items-center gap-3 cursor-pointer hover:opacity-85 transition"
+          title="Xem thông tin cá nhân"
+        >
+          <div className="w-9 h-9 rounded-full ring-2 ring-cyan-500/30 bg-cyan-100 border border-cyan-300 flex items-center justify-center text-cyan-700 font-bold text-sm shrink-0 overflow-hidden">
+            {user?.avatar ? (
+              <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
+            ) : user?.name ? (
+              user.name.charAt(0).toUpperCase()
+            ) : (
+              <User className="w-5 h-5" />
+            )}
           </div>
           <div className="hidden sm:block text-left">
             <div className="text-sm font-semibold text-slate-800">{user?.name}</div>
